@@ -21,7 +21,15 @@ See JS init script.
 
 ## Documentation
 
-Initialization in your `bootstrap.php`:
+
+Inicializastion by registraion in `config.neon`:
+
+```neon
+extensions:
+    nextrasForms: Nextras\Forms\DI\FormsExtension
+```
+
+or initialization in your `bootstrap.php`:
 
 ```php
 use Nette\Forms\Container;
@@ -43,6 +51,7 @@ Container::extensionMethod('addTypeahead', function(Container $container, $name,
 	return $container[$name] = new Controls\Typeahead($label, $callback);
 });
 ```
+
 
 Register your Bootstrap 3 macros in `config.neon`:
 ```neon
